@@ -1,9 +1,11 @@
 # mount point       fstype    device                                                                flags
-/system             ext4      ro                                            wait,slotselect,avb=vbmeta_system,logical,first_stage_mount,avb_keys=/avb/q-gsi.avbpubkey:/avb/r-gsi.avbpubkey:/avb/s-gsi.avbpubkey
-/system_ext         ext4      ro                                            wait,slotselect,avb,logical,first_stage_mount
-/vendor             ext4      ro                                            wait,slotselect,avb,logical,first_stage_mount
-/product            ext4      ro                                            wait,slotselect,avb,logical,first_stage_mount
-/dtbo               emmc      /dev/block/by-name/dtbo                  
+/system_image          emmc     /dev/block/mapper/system                      flags=display="System image";slotselect;backup=1;flashimg=1
+/vendor_image          emmc     /dev/block/mapper/vendor                      flags=display="Vendor image";slotselect;backup=1;flashimg=1
+/product_image         emmc     /dev/block/mapper/product                     flags=display="Product image";slotselect;backup=1;flashimg=1
+/system_ext_image      emmc     /dev/block/mapper/system_ext                  flags=display="System_ext image";slotselect;backup=1;flashimg=1
+/super_image        emmc      /dev/block/by-name/super                        flags=display="Super (Image)";backup=1;flashimg=1;wipeingui;slotselect
+
+# Other partitions
 /protect_f          ext4      /dev/block/by-name/protect1                   flags=display="Protect_f";backup=1;
 /protect_s          ext4      /dev/block/by-name/protect2                   flags=display="Protect_s";backup=1;
 /nvdata             ext4      /dev/block/by-name/nvdata                     flags=display="Nvdata";backup=1;
@@ -12,7 +14,6 @@
 /persistent         emmc      /dev/block/by-name/frp                        flags=display="Persistent";backup=1;flashimg=1;
 /nvram              emmc      /dev/block/by-name/nvram                      flags=display="Nvram";backup=1;flashimg=1;
 /proinfo            emmc      /dev/block/by-name/proinfo
-/boot               emmc      /dev/block/by-name/boot                       flags=display="Boot";flashimg=1;slotselect;
 /logo               emmc      /dev/block/by-name/logo                       flags=display="Logo";backup=1;flashimg=1;slotselect;
 /expdb              emmc      /dev/block/by-name/expdb
 /seccfg             emmc      /dev/block/by-name/seccfg                       
@@ -27,21 +28,14 @@
 /lk2                emmc      /dev/block/by-name/bootloader2               flags=display="Lk2";backup=1;flashimg=1;
 /tee1		            emmc      /dev/block/by-name/tee1
 /tee2		            emmc      /dev/block/by-name/tee2
-/super_image        emmc      /dev/block/by-name/super                     flags=display="Super (Image)";backup=1;flashimg=1;wipeingui;slotselect
 
 
-# Images
-/system_image       emmc      /dev/block/mapper/system                     flags=backup=1;flashimg=1;display="System";wipeingui;slotselect
-/system             ext4      /dev/block/mapper/system 
-/vendor_image       emmc      /dev/block/mapper/vendor                     flags=backup=1;flashimg=1;display="Vendor";wipeingui;slotselect
-/vendor             ext4      /dev/block/mapper/vendor 
-/product_image      emmc      /dev/block/mapper/product                    flags=backup=1;flashimg=1;display="Product";wipeingui;slotselect
-/product            ext4      /dev/block/mapper/product
-/system_ext_image   emmc      /dev/block/mapper/system_ext                 flags=backup=1;flashimg=1;display="System_ext";wipeingui;slotselect
-/system_ext         ext4      /dev/block/mapper/system_ext
-/vendorboot_image   emmc      /dev/block/mapper/vendorboot                 flags=backup=1;flashimg=1;display="Vendorboot Image";wipeingui;slotselect
-/vendor_boot_image  emmc      /dev/block/mapper/vendor_boot                flags=backup=1;flashimg=1;display="Vendor_boot Image";wipeingui;slotselect
-
+# Dynamic Partitions
+/system_ext         ext4      ro                                           flags=display="System_ext";slotselect;backup=1
+/vendor             ext4      ro                                           flags=display="Vendor";slotselect;backup=1
+/product            ext4      ro                                           flags=display="Product";slotselect;backup=1
+/dtbo               emmc      /dev/block/by-name/dtbo                      flags=display=dtbo;slotselect;backup=1
+/boot               emmc      /dev/block/by-name/boot                      flags=display=boot;slotselect;backup=1;flashimg=1
 
 # AVB
 /vbmeta             emmc      /dev/block/by-name/vbmeta                    flags=display=vbmeta;slotselect;backup=1;flashimg=1
