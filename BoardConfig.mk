@@ -143,8 +143,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_USES_MKE2FS := true
 
-# Use LZ4 Ramdisk compression instead of GZIP
-BOARD_RAMDISK_USE_LZ4 := true
 
 # AB
 AB_OTA_UPDATER := true
