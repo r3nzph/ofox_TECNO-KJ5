@@ -1,4 +1,4 @@
-# TWRP Device tree for Tecno Spark 20 KJ5.
+# OFOX Device tree for Tecno Spark 20 KJ5.
 
 Base-Tree -> https://github.com/twrpdtgen/android_device_tecno_TECNO-KJ5.git
 
@@ -35,7 +35,7 @@ Minor checks
 - [x] set brightness
 - [x] vibrate
 - [x] screenshot
-- [ ] partition SD card
+- [X] partition SD card
 
 # Tecno Spark 20
 ![Tecno Spark 20 KJ5](https://fdn2.gsmarena.com/vv/pics/tecno/tecno-spark-20-2.jpg)
