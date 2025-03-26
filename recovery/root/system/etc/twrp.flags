@@ -1,9 +1,9 @@
 # mount point       fstype    device                                                                flags
-/system_image          emmc     /dev/block/mapper/system                      flags=display="System image";slotselect;backup=1;flashimg=1
-/vendor_image          emmc     /dev/block/mapper/vendor                      flags=display="Vendor image";slotselect;backup=1;flashimg=1
-/product_image         emmc     /dev/block/mapper/product                     flags=display="Product image";slotselect;backup=1;flashimg=1
-/system_ext_image      emmc     /dev/block/mapper/system_ext                  flags=display="System_ext image";slotselect;backup=1;flashimg=1
-/super_image        emmc      /dev/block/by-name/super                        flags=display="Super (Image)";backup=1;flashimg=1;wipeingui;slotselect
+/system_image       emmc      /dev/block/mapper/system                      flags=display="System image";slotselect;backup=1;flashimg=1
+/vendor_image       emmc      /dev/block/mapper/vendor                      flags=display="Vendor image";slotselect;backup=1;flashimg=1
+/product_image      emmc      /dev/block/mapper/product                     flags=display="Product image";slotselect;backup=1;flashimg=1
+/system_ext_image   emmc      /dev/block/mapper/system_ext                  flags=display="System_ext image";slotselect;backup=1;flashimg=1
+/super_image        emmc      /dev/block/by-name/super                      flags=display="Super (Image)";backup=1;flashimg=1;wipeingui;slotselect
 
 # Other partitions
 /protect_f          ext4      /dev/block/by-name/protect1                   flags=display="Protect_f";backup=1;
