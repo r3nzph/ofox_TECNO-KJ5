@@ -10,15 +10,15 @@ on:
       MANIFEST_BRANCH:
         description: 'MANIFEST_BRANCH'
         required: true
-        default: '11.0'
+        default: '12.1'
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        default: 'https://github.com/r3nzph/android_device_tecno_TECNO-KJ5.git'
+        default: 'https://github.com/r3nzph/ofox_TECNO-KJ5.git'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
-        default: '13.5.0'
+        default: 'main'
       DEVICE_PATH:
         description: 'DEVICE_PATH'
         required: true
@@ -45,14 +45,14 @@ on:
 jobs:
   build:
     if: github.event.repository.owner.id == github.event.sender.id
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
  
     # You might want to Checkout your repo first, but not mandatory
     - name: Check Out
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     # Cleanup The Actions Workspace Using Custom Composite Run Actions
     - name: Cleanup
