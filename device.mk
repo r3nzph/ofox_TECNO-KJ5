@@ -4,6 +4,7 @@ AB_OTA_UPDATER := true
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# A/B
 AB_OTA_PARTITIONS += \
     boot \
     dtbo \
@@ -17,24 +18,19 @@ AB_OTA_PARTITIONS += \
     vbmeta_vendor \
     vendor \
     vendor_boot
-
-# Update engine
-PRODUCT_PACKAGES += \
-    checkpoint_gc \
-    update_engine \
-    update_engine_sideload \
-    update_verifier
-
+    
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
-    POSTINSTALL_PATH_system=system/bin/mtk_plpath_utils \
+    POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
+# Health Hal
 PRODUCT_PACKAGES += \
-    bootctrl.mt6768
-
-# Boot control HAL
+    android.hardware.health@2.1-impl \
+    android.hardware.health@2.1-service
+    
+# Bootctrl
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-mtkimpl \
     android.hardware.boot@1.2-mtkimpl.recovery
@@ -42,19 +38,26 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctrl
 
-# Health
-PRODUCT_PACKAGES += \
-    android.hardware.health@2.1-impl \
-    android.hardware.health@2.1-service
-
-# Build MT-PL-Utils
+# MTK PlPath Utils
 PRODUCT_PACKAGES += \
     mtk_plpath_utils \
     mtk_plpath_utils.recovery
+    
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := current
 
-# Keymaster
+# API
+PRODUCT_SHIPPING_API_LEVEL := 31
+
+PRODUCT_PACKAGES_DEBUG += \
+    update_engine_client
+
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@4.1
+    otapreopt_script \
+    cppreopts.sh \
+    update_engine \
+    update_verifier \
+    update_engine_sideload
 
 # Additional binaries & libraries needed for recovery
 TARGET_RECOVERY_DEVICE_MODULES += \
