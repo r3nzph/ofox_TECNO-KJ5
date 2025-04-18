@@ -47,7 +47,6 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
     export OF_SUPPORT_ALL_BLOCK_OTA_UPDATES=0
 
-    export FOX_USE_NANO_EDITOR=1
     export FOX_USE_BASH_SHELL=1
     export FOX_USE_TAR_BINARY=1
     export FOX_USE_XZ_UTILS=1
