@@ -32,14 +32,11 @@ if [ "$1" = "$FDEVICE" ] || [ "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export FOX_USE_TAR_BINARY=1
     export FOX_USE_SED_BINARY=1
     export FOX_USE_XZ_UTILS=1
-    export OF_ENABLE_LPTOOLS=1
-    export FOX_USE_NANO_EDITOR=1
     export OF_QUICK_BACKUP_LIST="/boot;/super;"
     export FOX_DELETE_AROMAFM=1
     export FOX_BUGGED_AOSP_ARB_WORKAROUND="1616300800"
     export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v28.1.zip
     export OF_DISABLE_MIUI_OTA_BY_DEFAULT=1
-    export OF_PATCH_VBMETA_FLAG="1"
     export FOX_PATCH_VBMETA_FLAG="1"
     export OF_HIDE_NOTCH=1
     export OF_CLOCK_POS=1
