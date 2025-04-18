@@ -102,9 +102,6 @@ TARGET_USES_MKE2FS := true
 # Use LZ4 Ramdisk compression instead of GZIP
 BOARD_RAMDISK_USE_LZ4 := true
 
-# AB
-AB_OTA_UPDATER := true
-
 # Recovery
 BOARD_HAS_NO_REAL_SDCARD := true
 BOARD_HAS_NO_SELECT_BUTTON := true
