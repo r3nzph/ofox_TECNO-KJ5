@@ -41,7 +41,7 @@ if [ "$1" = "$FDEVICE" ] || [ "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
     export OF_HIDE_NOTCH=1
     export OF_CLOCK_POS=1
     export OF_UNBIND_SDCARD_F2FS=1
-    export OF_VANILLA_BUILD=1
+    export FOX_VANILLA_BUILD=1
     export OF_DONT_PATCH_ENCRYPTED_DEVICE=1
     export FOX_RECOVERY_BOOT_PARTITION="/dev/block/by-name/boot"
     export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/by-name/vendor"
