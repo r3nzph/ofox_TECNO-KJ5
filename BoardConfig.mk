@@ -123,12 +123,12 @@ TW_HAS_MTP := true
 TW_MTP_DEVICE := /dev/mtp_usb
 
 # Debug
-TWRP_INCLUDE_LOGCAT := true
+TWRP_EXCLUDE_LOGCAT := true
 TWRP_EVENT_LOGGING := true
 TARGET_USE_LOGD := true
 
 # Tools / Resetprop and magiskboot
-TW_USE_TOOLBOX := true
+TW_EXCLUDE_TOOLBOX := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
 TW_EXCLUDE_SUPERSU := true
 TW_EXCLUDE_BASH := true
